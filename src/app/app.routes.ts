@@ -11,10 +11,12 @@ import { AboutComponent } from './Components/about/about.component';
 import { CartComponent } from './Components/cart/cart.component';
 import { CategoriesComponent } from './Components/categories/categories.component';
 import { BrandsComponent } from './Components/brands/brands.component';
+import { logedGaurdGuard } from './Core/services/RegisterService/guards/loged-gaurd.guard';
+import { authGaurdGuard } from './Core/services/RegisterService/guards/auth-gaurd.guard';
 
 export const routes: Routes = 
 [
-    {path:"",component:AuthLayoutComponent,title:'auth',
+    {path:"",component:AuthLayoutComponent,title:'auth',canActivate:[logedGaurdGuard],
     children:
     [
         {path:"",redirectTo:'login',pathMatch:'full'},
@@ -23,7 +25,7 @@ export const routes: Routes =
 
     ]
     },
-    {path:"",component:BlankLauoutComponent,title:'blank',children:
+    {path:"",component:BlankLauoutComponent,title:'blank',canActivate:[authGaurdGuard],children:
         [
             {path:"",redirectTo:'home',pathMatch:'full'},
             {path:"home",component:HomeComponent,title:'home'},

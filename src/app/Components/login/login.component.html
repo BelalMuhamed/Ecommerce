@@ -1,1 +1,66 @@
-<p>login works!</p>
+<h1 class="h2 text-main">login Now !</h1>
+<form [formGroup]="Loginform" (ngSubmit)="OnSubmitLogin()">
+   
+    <div class="my-2">
+        <label for="email" > Email</label>
+        <input id ="email" type="email" class="form-control"formControlName="email"
+        [ngClass]="
+        {
+            'is-valid':!Loginform.get('email')?.errors  && (Loginform.get('email')?.touched || Loginform.get('email')?.dirty),
+            'is-invalid':Loginform.get('email')?.errors  && (Loginform.get('email')?.touched || Loginform.get('email')?.dirty)
+        }"/>
+        @if (Loginform.get('email')?.errors  && (Loginform.get('email')?.touched || Loginform.get('email')?.dirty)) 
+        {
+            <div class="alert alert-danger w-25 mt-3 border-1 border-danger bg-body-tertiary">
+            @if(Loginform.get('email')?.getError('required'))
+            {
+                    <p class="m-0 text-danger"> email is required !</p>
+            }
+            @else if(Loginform.get('email')?.getError('email'))
+            {
+                    <p class="m-0 text-danger"> please enter valid email address!</p>
+            }
+          
+        </div>
+            
+        }
+    </div>
+   
+    <div class="my-2">
+        <label for="password" >  password</label>
+        <input id ="password" type="password" class="form-control"formControlName="password"
+        [ngClass]="
+        {
+            'is-valid':!Loginform.get('password')?.errors  && (Loginform.get('password')?.touched || Loginform.get('password')?.dirty),
+            'is-invalid':Loginform.get('password')?.errors  && (Loginform.get('password')?.touched || Loginform.get('password')?.dirty)
+        }"/>
+        @if (Loginform.get('password')?.errors  && (Loginform.get('password')?.touched || Loginform.get('name')?.dirty)) 
+        {
+            <div class="alert alert-danger w-25 mt-3 border-1 border-danger bg-body-tertiary">
+            @if(Loginform.get('password')?.getError('required'))
+            {
+                    <p class="m-0 text-danger"> password is required !</p>
+            }
+            @else if(Loginform.get('password')?.getError('pattern'))
+            {
+                    <p class="m-0 text-danger"> password must be at least 6 charchters </p>
+            }
+          
+        </div>
+            
+        }
+    </div>
+  
+    
+    @if (msgerror)
+    {
+        <div class="alert alert-danger w-25 mt-3 border-1 border-danger bg-body-tertiary d-block mt-0">
+            <p>{{msgerror}}</p>
+        </div>
+    }
+    <button [disabled]="Loginform.invalid ||isloading" class="btn-main d-block ms-auto mt-4" type="submit">
+        @if (isloading) {<span><i class="fas fa-spin fa-spinner"></i></span>}
+        Login
+        </button>
+    
+</form>

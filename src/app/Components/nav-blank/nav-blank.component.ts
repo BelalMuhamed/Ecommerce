@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
 import { RouterLink, RouterLinkActive } from '@angular/router';
+import { LoginservisesService } from '../../Core/services/RegisterService/loginservises.service';
 
 @Component({
   selector: 'app-nav-blank',
@@ -11,5 +12,5 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   styleUrl: './nav-blank.component.scss'
 })
 export class NavBlankComponent {
-
+_Logout = inject(LoginservisesService);
 }
