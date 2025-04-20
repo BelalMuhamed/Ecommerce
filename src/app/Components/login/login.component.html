@@ -58,9 +58,16 @@
             <p>{{msgerror}}</p>
         </div>
     }
-    <button [disabled]="Loginform.invalid ||isloading" class="btn-main d-block ms-auto mt-4" type="submit">
-        @if (isloading) {<span><i class="fas fa-spin fa-spinner"></i></span>}
-        Login
-        </button>
+    <div class="d-flex flex-column align-items-center justify-content-center">
+        <button [disabled]="Loginform.invalid ||isloading" class="btn-main d-block ms-auto mt-4" type="submit">
+            @if (isloading) {<span><i class="fas fa-spin fa-spinner"></i></span>}
+            Login
+            </button>
+           
+           <span>If You Forget your Password   <a routerLink="/resetpassword" class="text-main" >Click Here !</a></span>    
+            
+            
+    </div>
+    
     
 </form>

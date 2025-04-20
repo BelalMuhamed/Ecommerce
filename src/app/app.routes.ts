@@ -13,6 +13,8 @@ import { CategoriesComponent } from './Components/categories/categories.componen
 import { BrandsComponent } from './Components/brands/brands.component';
 import { logedGaurdGuard } from './Core/services/RegisterService/guards/loged-gaurd.guard';
 import { authGaurdGuard } from './Core/services/RegisterService/guards/auth-gaurd.guard';
+import { DetailsComponent } from './Components/details/details.component';
+import { ResetPasswordComponent } from './Components/reset-password/reset-password.component';
 
 export const routes: Routes = 
 [
@@ -22,6 +24,7 @@ export const routes: Routes =
         {path:"",redirectTo:'login',pathMatch:'full'},
         {path:"login",component:LoginComponent,title:'login'},
         {path:"register",component:RegisterComponent,title:'register'},
+        {path:"resetpassword",component:ResetPasswordComponent,title:'resetpassword'},
 
     ]
     },
@@ -32,7 +35,8 @@ export const routes: Routes =
             {path:"product",component:ProductComponent,title:'product'},
             {path:"cart",component:CartComponent,title:'cart'},
             {path:"categories",component:CategoriesComponent,title:'categories'},
-            {path:"brands",component:BrandsComponent,title:'brands'}
+            {path:"brands",component:BrandsComponent,title:'brands'},
+            {path:"details/:_id",component:DetailsComponent,title:'details'}
         ]},
     {path:"**",component:NotFoundComponent}
 

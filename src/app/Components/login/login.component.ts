@@ -4,12 +4,11 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { LoginservisesService } from '../../Core/services/RegisterService/loginservises.service';
 import { HttpErrorResponse } from '@angular/common/http';
 import { NgClass } from '@angular/common';
-import { Router } from '@angular/router';
-import { log } from 'console';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-login',
-  imports: [ReactiveFormsModule,NgClass],
+  imports: [ReactiveFormsModule,NgClass,RouterLink],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss'
 })

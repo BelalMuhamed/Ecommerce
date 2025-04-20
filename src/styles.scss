@@ -1,6 +1,6 @@
-/* You can add global styles to this file, and also import other style files */
+@import 'ngx-owl-carousel-o/lib/styles/scss/owl.carousel';
+@import 'ngx-owl-carousel-o/lib/styles/scss/owl.theme.default';
 @import url("https://fonts.googleapis.com/css2?family=Encode+Sans+Expanded:wght@300&display=swap");
-
 :root {
   --main-color: #0aad0a;
   --light-color: #f0f3f2;
@@ -9,6 +9,7 @@
     rgba(145, 158, 171, 0.12) 0px 1px 10px 0px;
   --font-family: "Encode Sans Expanded", sans-serif;
   --rating-color: #ffc908;
+  
 }
 
 body {
@@ -77,4 +78,29 @@ a:hover {
 }
 .btn-main:hover {
   background-color: #11bd11;
+}
+.btn-main:hover {
+  background-color: #11bd11;
+}
+
+.product .btn-main
+{
+  transform: translateY(5000%);
+  transition: transform 0.4s;
+  -webkit-transform: translateY(5000%);
+  -moz-transform: translateY(5000%);
+  -ms-transform: translateY(5000%);
+  -o-transform: translateY(5000%);
+  -webkit-transition: transform 0.4s;
+  -moz-transition: transform 0.4s;
+  -ms-transition: transform 0.4s;
+  -o-transition: transform 0.4s;
+}
+.product:hover .btn-main
+{
+  transform: translateY(0);
+  -webkit-transform: translateY(0);
+  -moz-transform: translateY(0);
+  -ms-transform: translateY(0);
+  -o-transform: translateY(0);
 }

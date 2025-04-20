@@ -20,17 +20,7 @@ export class RegisterComponent {
 _router=inject(Router);
  msgerror:string='';
  isloading:boolean=false;
-  // registerform:FormGroup=new FormGroup(
-  //   {
-      
-  //       name: new FormControl(null,[Validators.required,Validators.minLength(3),Validators.maxLength(30)]),
-  //       email:new FormControl(null,[Validators.required,Validators.email]),
-  //       password:new FormControl(null,[Validators.required,Validators.pattern(/^\w{6,}$/)]),
-  //       rePassword:new FormControl(null),
-  //       phone:new FormControl(null,[Validators.pattern(/^01[0125][0-9]{8}$/)])
-    
-  //   }, this.ConfirmPassword
-  // );
+  
   registerform:FormGroup = this._formBuilder.group(
     {
       name: [null,[Validators.required,Validators.minLength(3),Validators.maxLength(30)]],
